@@ -1,0 +1,19 @@
+Package: phylotools
+Type: Package
+Title: Phylogenetic tools for Eco-phylogenetics
+Version: 0.1.2
+Date: 2011-8-18
+Authors@R: c(person("Jinlong", "Zhang", role = c("aut", "cre"),
+		     email = "jinlongzhang01@gmail.com"), 
+                     person("Nancai","Pei", role = "aut"), 
+                     person("Xiangcheng","Mi", role = "aut"))
+Author: Jinlong Zhang [aut, cre]
+Description: Building supermatrix for DNA barcodes using different
+        genes, calculating the inequality among lineages and
+        phylogenetic similarity for very large dataset using slicing
+        methods by invoking Phylocom.
+Depends: seqRFLP, ape, picante, spaa, fields
+Suggests: vegan
+License: GPL-2
+LazyLoad: yes
+URL: https://github.com/helixcn/phylotools

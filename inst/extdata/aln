@@ -1,0 +1,156 @@
+CLUSTAL X (1.81) multiple sequence alignment
+
+
+T88             ------------------------------------------------------------
+T90             ------------------------------------------------------------
+T89             ------------------------------------------------------------
+T91             ------------------------------------------------------------
+T171            ------------------------------------------------------------
+T73             ------------------------------------------------------------
+T93             CTCTCCGCCCCTC------TTATAAAATTACAAAAAATCCAAAGATTCCAATTTCTACCA
+T94             ---TCCGCCCCTC------TTA-AAAATTACAAAAAATCCAAAGATTCCAATTTCTACCA
+T92             ---TCCGCCCCTCCACTATTTTCAAAATTACAAAAAA---AAGAATTCGAATTTATACCA
+                                                                            
+
+T88             ------------------------------------------------------------
+T90             ------------------------------------------------------------
+T89             ------------------------------------------------------------
+T91             ------------------------------------------------------------
+T171            ------------------------------------------------------------
+T73             ------------------------------------------------------------
+T93             TTGATCATAATTTTTGATCATTATCCTTTTTTTTATGGTACCTTACTTATCAATATTGAA
+T94             TTGATCATAATTTGTGATCATTATACTTTTTTT-ATGGTACCTTACTTATCAATATCGAA
+T92             TTTATCATTATTTTTGATCATTATTCTTTTTTT-ATCTTACCTTACTTATGAATATAGAA
+                                                                            
+
+T88             ----------------------------------------------------------TC
+T90             ----------------------------------------------------------TC
+T89             ------------------------------------------------------------
+T91             --------------------------------------------------------TCCG
+T171            -------------------------------------------------------CGCCC
+T73             ------------------------------------------------------------
+T93             GTGAAGATACAAGAAGCAGAAAATTGCAATCCTTTTCTTTTCTACAAC-TTTATAGTTTC
+T94             GTGAAGATACAAGAAGCAGAAAATTTCAATCCTTTTCTTTTCTACAACCTTTATTTTTTC
+T92             GTGAAGATAAAAAAAGCAGAAAATTCCAACCTTTTTCTTTTATACAACCTTTCCATTTTA
+                                                                            
+
+T88             CGCCCCCCCACTAGCTACAAAATTACAAAATAAAAAGAT--------TCAAATTTCTACC
+T90             CGCCCCCC-ACTAGCTACAAAATTACAAAATAAAAAGAT--------TCAAATTTCTACC
+T89             --------CACTAGCTACAAAATTACAAAATAAAAAGAT--------TCAAATTTCTACC
+T91             CCCTCTTAGATTTTTTT----ATTTTAAG--ACAAAAGG--------TTGAATTTCGACC
+T171            CTTTATTCTGCTATTTACAAAATTTTGAACTACAAAAAT--------CTCCATTTCAATC
+T73             ------------------------------------------------------------
+T93             TATTTTTTTTTAAGTCAA---ATAATA-ATTAGTAAAT---------TTGAATTCCAAAT
+T94             TATTATTTAAATAGTCAA---AAAATA-ATTAGTAAAT---------TTGAATTCAAAAT
+T92             TATTAAATTAACTGTAAATTGAAAATAGAACTGTAAAAAAAGGATTATTCTATTTTCAAT
+                                                                            
+
+T88             ATTAATCATCT-TTTTTTATCTTACCT--TAATTATGAAGATACAAATGAAGAGACAAGA
+T90             ATTAATCATCT-TTTTTTATCTTACCT--TAATTATGAAGATACAAATGAAGAGACAAGA
+T89             ATTAATCATCT-TTTTTTATCTTACCT--TAATTATGAAGATACAAATGAAGAGACAAGA
+T91             ATT--TCATTTATCTTCTTTCTTATTTG-TGA-GATATTTTTATCTCTGAGATAAAAAGA
+T171            ATTGATCATTATTTTTTTATCTTATTTA-TGAAGATTCATGAAGATCCAAGGGCAGAAAA
+T73             ------------------------------------------------------------
+T93             TCAAAGAATTTGTTAGATTTTTTGTTGGATTTTTATCTATTTATCTAATAGATTAGAGAT
+T94             TCAAAGAATTTATTAGATTTTTTGTTGGATTTTTATCTATTTATCTAATAGATTAGAGAT
+T92             TCTAATACTTTGTTAGATTTTTTATTCGATTTTTAGTTTTTTATCTAATAAATTAGAGAT
+                                                                            
+
+T88             GGCA-----------TAAATTTCCAAACTTTTTTATATTATAT-----------------
+T90             GGCA-----------TAAATTTCCAAACTTTTTTATATTATAT-----------------
+T89             GGCA-----------TAAATTTCCAAACTTTTTTATATTATAT-----------------
+T91             TTAAG--------C-AAAAATTCTAATTTTTCTCGTTTTAATTTG---------------
+T171            CTA----------C-AACCTTTCTCTTTTCTTTTCTATTAAATT----------------
+T73             ------------------------------------------------------------
+T93             T------------CTATGGATTCTAAT---------------------------------
+T94             T------------CTATGGATTCTAAT---------------------------------
+T92             TAGAGCTAATAAATTAGAGATTCTATTTTTTATATTCTTCTATATATTAGATTAATATTC
+                                                                            
+
+T88             ----------------------AGAAAATTGACTCAAAATAATAAACTGTAAAGTCATAA
+T90             ----------------------AGAAAATTGACTCAAAATAATAAACTGTAAAGTCATAA
+T89             ----------------------AGAAAATTGACTCAAAATAATAAACTGTAAAGTCATAA
+T91             --------AAATAAAAATGTCAAAAAAACT--TCGCAAAAGATGGGTAGATAAATGAAAA
+T171            --------ATCTTTTCTTTTCTATTAAATTAATAGTAAAAATTCAAAAATTAGATTCTAA
+T73             ------------------------------------------------------------
+T93             ----------------------------------ATACAGAAGAATATAATTCTCTATTA
+T94             ----------------------------------ATACAGAAGAATATTATTCTCTATTA
+T92             TATCTAGTCGAATATACATATTAGACTATTATTTATATAGTAATCTATTATTCTCTATTA
+                                                                            
+
+T88             TACCTAAA-----------ATAACTAAAAAATAACTAAAGACTAATTTTATTATTAGCAC
+T90             TAACTAAA-----------ATAACTAAAAAATAACTAAAGACTAATTTGATTATTAGCAC
+T89             TAACTAAA-----------ATAACTAAAAAATAACTAAAGACTAATTTTATTATTAGCAC
+T91             TAAAAATGC----------ATATAGAACGAACAAAT-AATACTCAATCAGCAATCAACCC
+T171            TTTACTAAT----------TTATAAATTAATAAAATTAGAATTTTCTTAGTAGTATTAGC
+T73             ------------------------------------------------------------
+T93             TTAAATTG-----------ATAGAAATCAATTATTTCGATTTCTTATTTC----TAGAAT
+T94             TTAAATTG-----------ATATAAATCAATTATTTCGATTTCTTATTTC----TAGAAA
+T92             TTAAACTATTATTAAATTTATATAAATTTATTATTTCTATTTATAGAAATAAAATAGATA
+                                                                            
+
+T88             GTAGTAATAATA--TGATACTAAAT-------------------AAAAAGGCA-TAAAAA
+T90             GTAGTAATAATA--TGATACTAAAT-------------------AAAAAGGCA-TAAAAA
+T89             GTAGTAATAATA--TGATACTAAAT-------------------AAAAAGGCA-TAAAAA
+T91             CTAAGAAAAATAATCCCCTTTATTTCTT------------TTTCGGTAATGTA-ATGAAT
+T171            GCATACAAAATATATGATACTAAATCAA------------AGAAAAGAACGAA-AAGCAT
+T73             -------------TCCGCCCCTCCGCCA------------TTTAGAAAATAAA-AACAA-
+T93             TC----------------------------------------------------------
+T94             TCAAAAAAATAGAAATGAAATAGATATT---------AATATTAATTAATTTACATAAAA
+T92             TTAATTCATTCTAATTGAATTATTAGTACATAAGTAAGATACTAAATCAAATGCATACAA
+                                                                            
+
+T88             AGCTTTGTGTTTTGTTGAAGTCAAAAAAGGACAAAAATAACAAATTGAAA-----AAAAA
+T90             AGCTTTGTGTTTTGTTGAAGTCAAAAAAGGACAAAAATAACAAATTGAAA-----AAAAA
+T89             AGCTTTGTGTTTTGTTGAAGTCAAAAAAGGACAAAAATAACAAATTGAAA-----AAAAA
+T91             AAAAGTCTATGTAAGTACAATATGACTAA-AAAAAGTAGTAGTAATTAAA-----AAGAA
+T171            AAAAATACTTTAAATTAAAATAAAAAAAG-ATGTAAATAAAAAACTACTA-----AAGAA
+T73             AAGCATAAAAAGATTTTTAGTAAAAAAAGTATGTAACTAAAAAACTACTA-----AAAAA
+T93             ------------------------------------------------------------
+T94             AGACTTTTGTTTTGTTGAAAAATAAACAACCAAACGAAACGTATGTAAAT--------AA
+T92             ATACTTTTGTTTGGTTGAAAAGTAAACAAAAAACGTATGTAAATCAAAAACTACTAAAGA
+                                                                            
+
+T88             ---CCTAATAAATAACGGAGCAATACCGATTTATT-GGAAGAGGATCGGCATTGCTCCGT
+T90             ---CCTAATAAATAACGGAGCAATACCGATTTATT-GGAAGAGGATCGGCATTGCTCCGT
+T89             AAACCTAATAAATAACGGAGCAATACCGATTTATT-GGAAGAGGATCGGCATTGCTCCGT
+T91             A--ATAAAGGAGCAATAAACTCTTTCTTGTTCTAT--CAAGAGGG-CATTATTGCTCCTT
+T171            A--CCGACTCAATAACGGATCAATACCGACCCCCT--TAAGGGGGTCGGTATTGATCCGT
+T73             A--AACACTAAATAACGGAGTAATACCGAACCCCTTGCAAGGGGTTCGGTATTACTCCGT
+T93             --------TTAATAACGGAGCAATACCAACCCTCTTGCAAGAAC-TTGGTATTACTCCGT
+T94             AAAACTACTAAATAACGGAGCAATACCGACCCTCTTGCAAGAAA-TCGGTATTGCTCCGT
+T92             AAAACTACTAAATAACGGAGCAATACCAATT-TCTTGCAAGAAGGTCGGTATTGCTCCGT
+                                                           
+
+T88             TATTTTC----------AAAAACGTGTATACACGAAGATCGAAATCTT------------
+T90             TATTTTC----------AAAAACGTGTATACACGAAGATCGAAATCTT------------
+T89             TATTTTC----------AAAAACGTGTATACACGAAGATCGAAATCTT------------
+T91             TATTTTCTTTTTTTTTCAATAACTCCTATACACTAAGATTGGG-TCTT------------
+T171            TATTTTT----------AAAAACTCGTCTACACAAAGATCAAAATCTT------------
+T73             TATTTTC----------AAAAACTCGGTTACACTAAGGCCAAAATCTT------------
+T93             TATTTTC----------AAAAACTCGTATACACAAAGATCGAAATCTTAAAGATCAAAAT
+T94             TATTTTC----------AAAAACTCGTATACACAAAGATCGAAATCTT------------
+T92             TATTTTC----------AAAAACTCGTATACACAAAGACCGAAATCTT------------
+                                                     
+
+T88             ---ATCCATTTGTAGAAGGAGCTTCAATAGCAGCTAGGTCTAGAGGGAAATTATGAGCAT
+T90             ---ATCCATTTGTAGAAGGAGCTTCAATAGCAGCTAGGTCTAGAGGGAAATTATGAGC--
+T89             ---ATCCATTTGTAGAAGGAGCTTCAATAGCAGCTAGGTCTAGAGGGAAATTAT------
+T91             ---ATCCATTTGTAGATGGAGCTTCGATAGAAGCTAGGTCTAGAGGGAAGTTATGAGCA-
+T171            ---ATCCATTTGTAGATGGAGCTTCAATAGCAGCTAGGTCTAGAGGGAA-----------
+T73             ---ATCCATTTATAGATGGGGC--------------------------------------
+T93             CTTATCCATTTGTAGATGGAGCTTCAATAGCAGCTAGGTCTAGAGGGAAATTA-------
+T94             ---ATCCATTTGTAGACGGAGCTTCAATAGCAGCTAGGTCTAGAGGGAAATT--------
+T92             ---ATCCATTTGTAGATGGAGCTTCAATAGCAGCTAGGTCTAG-----------------
+                                                            
+
+T88             T
+T90             -
+T89             -
+T91             -
+T171            -
+T73             -
+T93             -
+T94             -
+T92             -
+                 
