@@ -12,8 +12,8 @@ This package currently consists of a few functions for handling DNA-barcoding se
 \tabular{ll}{
 Package: \tab phylotools\cr
 Type: \tab Package\cr
-Version: \tab 0.1.2\cr
-Date: \tab 2010-8-18\cr
+Version: \tab 0.1.3\cr
+Date: \tab 2015-5-21\cr
 License: \tab GLP-2\cr
 LazyLoad: \tab yes\cr
 }
