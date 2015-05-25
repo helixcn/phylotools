@@ -2,59 +2,51 @@
 \alias{rename.fasta}
 
 \title{
-Renaming a fasta object given a reference table
+Rename the sequences for a fasta file
 }
 \description{
-this function could be used to rename the sequences in the fasta object, given a reference dataframe.
+Rename the sequences within a fasta file according to a data frame supplied. 
 }
 \usage{
-rename.fasta(fas, ref, fil = NULL, prefix = NULL)
+rename.fasta(infile = NULL, ref_table, outfile = "renamed.fasta")
 }
 
 \arguments{
-  \item{fas}{
-the fasta object.
+  \item{infile}{
+character string containing the name of the fasta file.
 }
-  \item{ref}{
-Dataframe with first column of the names of the sequences , the second column which name to change into.
+  \item{ref_table}{
+a data frame with first column for original name, second column for the new name of the sequence.
 }
-  \item{fil}{
-A string indicating the file name, the result written to.
-}
-  \item{prefix}{
-prefix of which the names of the sequences.
+  \item{outfile}{
+The name of the fasta file with sequences renamed. 
 }
 }
 \details{
-Prefix providing the flexibility of modifying the input names of sequences, for example, if the sequences names begin with "P_seq1", and unfortunately the names in reference table are lack of "P_". You may set the prefix as "P_", and without changing the reference table. 
-
+If the orginal name was not found in the ref_table, the name for the sequence will be changed into "old_name_" + orginal name. 
 }
 \value{
-fasta object
+This is a subroutine without return value. 
 }
 \references{
-None
+\url{http://www.genomatix.de/online_help/help/sequence_formats.html}
 }
 \author{
-Jinlong Zhang \email{jinlongzhang01@gmail.com}
+Jinlong Zhang <jinlongzhang01@gmail.com>
+}
+\note{
+Since whitespace and punctuation characters will be replaced with "_",  name of a sequence might change. It is suggest to obtain the name of the sequences by calling read.fasta first, and save the data.frame to a csv file to obtain the "original" name for the sequences. 
 }
 
 \seealso{
-\code{\link{gnames.fas}}
+\code{\link{read.fasta}}, \code{\link{split_dat}}
 }
-
 \examples{
 
-library(seqRFLP)
-## loading data
-data(fil.fas)
-## Get the names of the sequences
-col1 <- gnames.fas(fil.fas)
-## Generating new names
-col2 <- paste("seq", 1:length(col1), sep = "")
-reftable.rename <- data.frame(col1, col2)
-## 
-rename.fasta(fil.fas, reftable.rename)
+fasta.file <- system.file("/extdata/aligned.fasta", package = "phylotools")
+ref <- system.file("/extdata/sequences.fasta.csv", package = "phylotools")
+ref2 <- read.csv(ref, header = TRUE)
+rename.fasta(infile = fasta.file, ref_table = ref2, outfile = "renamed.fasta")
 
 }
 

@@ -1,49 +1,31 @@
-#### Renaming of the sequences in a fasta file, given a reference table
-#### This function is part of R package phylotools
-#### By Jinlong Zhang  <Jinlongzhang01@gmail.com>
-#### Institute of Botany, the Chinese Academy of Sciences, Beijing ,China
-#### Oct- 30- 2010
+#### author: Jinlong Zhang <jinlongzhang01@gmail.com>
+#### institution: Kadoorie Farm and Botanic Garden, Hong Kong
+#### package: phylotools
+#### URL： http://github.com/helixcn/phylotools
+#### date: 26 MAY 2015
 
 
-rename.fasta <- 
-function(fas, ref, fil = NULL, prefix = NULL){
+rename.fasta <- function(infile = NULL, ref_table, 
+                         outfile = "renamed.fasta"){
+    fasta <- read.fasta(infile)
     ## Convert the input ref to dataframe
-    if(!is.data.frame(ref)){
- 	    ref <- as.data.frame(ref)    
-	}
-	
-	### if(!length(dim(ref)) == 2){
-	###     stop("The input ref table must be a dataframe")
-	### }
-	
-    names.fas <- gnames.fas(fas)
-    ref[,1] <- paste(prefix, ref[,1], sep = "")
-    names.ref <- ref[,1]
-    names.sub <- as.character(ref[,2])
-    new.names.fas <- rep(NA, length(names.fas))
+    ## usually the file was obtained by
+    ## save the result of get.names.fasta to a csv file. 
+    ## edit the csv file, and provide the name to be replaced. 
     
-	##Which name to apply
-    for(i in 1:nrow(ref)){
-        for(j in 1:length(names.fas)){
-    	    if(names.fas[j] == names.ref[i]){
-    		    new.names.fas[j] <- names.sub[i]
-    		}
-    	}
-    }
-	
-	##Give out Warning if any of the names in fasta can not be found in the ref table
-    if(any(is.na(new.names.fas))){
-        unfind <- names.fas[which(is.na(new.names.fas))]
-        warning(paste(paste(unfind, collapse = ", "),"can not be found in the refence table"))
-    }
-	
-	## Rename
-    res <- rename.fas(fas, paste(">",new.names.fas, sep = ""))
+    colnames(ref_table)  <- c("old_name", "new_name")
+    res <- merge(x = fasta, y = ref_table, by.x = "seq.name", 
+                 by.y = "old_name", all.x = TRUE) ### Order of the sequence will change because of merge
+    rename <- rep(NA, nrow(res))
     
-	## If specified the file name, write to the file.
-	if(!is.null(fil)){
-	    write.fasta(res, fil)
-	}
-	return(res)
+    ### if the sequence was not found in the ref_table, 
+    ### keep the old name
+    
+    for(i in 1:nrow(res)){
+       rename[i] <- ifelse(is.na(res$new_name[i]), 
+                           paste("old_name", "_",as.character(res$old_name[i]), sep = ""), 
+                           as.character(res$new_name[i]))
+    }
+    writeLines(paste(">", rename, "\n", as.character(res$seq.text), sep = ""), outfile )
+    cat(paste(outfile, "has been saved to ", getwd(), "\n" ))
 }
-

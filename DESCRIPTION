@@ -1,17 +1,16 @@
 Package: phylotools
 Type: Package
 Title: Phylogenetic tools for Eco-phylogenetics
-Version: 0.1.3
-Date: 2015-5-21
+Version: 0.2.0
+Date: 2015-5-26
 Authors@R: person("Jinlong", "Zhang", role = c("aut", "cre"),
                      email = "jinlongzhang01@gmail.com")
 Author: Jinlong Zhang [aut, cre]
 Maintainer: Jinlong Zhang <jinlongzhang01@gmail.com>
-Description: Building supermatrix for DNA barcodes using different
-        genes, calculating the inequality among lineages and
-        phylogenetic similarity for very large dataset using slicing
-        methods by invoking Phylocom.
-Depends: seqRFLP, ape, picante, spaa, fields
+Description: A collection of tools for building RAxML supermatrix using 
+             PHYLIP or aligned FASTA files. These functions shall be 
+             useful for building large phylogenies using multiple genes. 
+Depends: ape
 Suggests: vegan
 License: GPL-2
 LazyLoad: yes

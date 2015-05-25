@@ -1,19 +1,43 @@
-#### Function read.phylip as part of R package phylotools
-#### By Jinlong Zhang  <Jinlongzhang01@gmail.com>
-#### Institute of Botany, the Chinese Academy of Sciences, Beijing ,China
-#### Nov- 01-2010
+#### author: Jinlong Zhang <jinlongzhang01@gmail.com>
+#### institution: Kadoorie Farm and Botanic Garden, Hong Kong
+#### package: phylotools
+#### URL： http://github.com/helixcn/phylotools
+#### date: 26 MAY 2015
 
-read.phylip <-
-function(fil = NULL) {
-    if(is.null(fil)){
-      stop("You have to specify the input phylip file.")
+
+read.phylip <- function(infile, clean_name = TRUE){
+    dat <- readLines(infile)
+    
+    ### Obtain the number of sequences
+    seq.info <- strsplit(gsub("[[:space:]]", "_",dat[1]), "_")[[1]]
+    seq.info.numeric <- as.numeric(seq.info)
+    seq.info.numeric <- seq.info.numeric[!is.na(seq.info.numeric)]
+    nseq <- seq.info.numeric[1]
+    
+    
+    if(length(dat) > (nseq + 1)){ ### interleaved
+        seqs <- dat[-1]           ### omit the first line
+        
+        seq.text <- c()
+        for (i in 1:nseq){        ### obtain the corresponding lines for each sequence
+            seq.index   <- seq(from = 0, to = length(dat)-1, by = nseq + 1) + i
+            seq.text[i] <- paste(seqs[seq.index], collapse = "")
+       }
+    } else {                      
+        seq.text <- dat[2:length(dat)]  ### sequential, can be read directly
     }
-    fil <- readLines(fil)
-    fil = fil[grepl("[A-Za-z1-9\\-]", fil)]
-    if(length(fil) <= 1){
-      stop("The input file contains only one row, is it in phy format?")
+    seq.name <- substr(seq.text, start = 1,  stop = regexpr(" ", seq.text) - 1)
+    if(clean_name){
+        seq.name <- gsub("^[_]+|[_]+$| ","",gsub("^[[:space:]]+|[[:space:]]+$", "", gsub("[[:punct:]]","_", seq.name)))
     }
-    class(fil) <- "phy"
-    return(fil)
+    seq.text <- gsub("[[:space:]]", "", substr(seq.text, start = regexpr(" ", seq.text), stop = nchar(seq.text)))
+    res <- data.frame(seq.name, seq.text)
+    return(res)
 }
+
+
+
+
+
+
 

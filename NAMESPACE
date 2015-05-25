@@ -6,9 +6,5 @@ exportPattern(".")
 
 # Import all packages listed as Imports or Depends
 import(
-  seqRFLP,
-  ape,
-  picante,
-  spaa,
-  fields
+  ape
 )
