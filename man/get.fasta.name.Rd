@@ -14,7 +14,8 @@ get.fasta.name(infile, clean_name = FALSE)
 
 \arguments{
 
-  \item{infile}{
+  \item{infile}{ 
+character string representing the name of the fasta file.
 }
   \item{clean_name}{
 logical, representing cleaning of the names will be performed. 
