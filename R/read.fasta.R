@@ -4,7 +4,7 @@
 #### URL： http://github.com/helixcn/phylotools
 #### date: 26 MAY 2015
 
-read.fasta <- function (file = NULL, clean_name = TRUE) {
+read.fasta <- function (file = NULL, clean_name = FALSE) {
     fasta.content <- readLines(file)
     
     ### find and process the names of the sequence. 
