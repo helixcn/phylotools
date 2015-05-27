@@ -21,6 +21,5 @@ dat2phylip <- function(dat, outfile = "out.phy"){
     }
     res <- c(row1, res)
     writeLines(res, outfile)
-    cat(paste(outfile, "has been saved to ", getwd(), "\n"))
 }
 
