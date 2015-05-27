@@ -76,5 +76,6 @@ supermat <- function(infiles,
                    res.super.dat = res.super.dat, 
                    partition.dat = partition.dat, 
                    partition.dat.vector = partition.dat.vector))
-    cat("supermatrix ",outfile, "and RAxML partition file:", partition.file," have been saved to: \n", getwd())
+    cat(paste("Supermatrix \"",outfile, "\" and RAxML partition file \"", 
+        partition.file,"\" have been saved to: \n", getwd(), "\n", sep = ""))
 }
