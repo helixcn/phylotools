@@ -7,5 +7,5 @@
 
 dat2fasta <- function(dat, outfile = "out.fasta"){
     writeLines(paste(">", as.character(dat$seq.name), "\n", as.character(dat$seq.text), sep = ""), outfile )
-    cat(paste(outfile, "has been saved to ", getwd(), "\n"))
+    ### cat(paste(outfile, "has been saved to ", getwd(), "\n"))
 }
