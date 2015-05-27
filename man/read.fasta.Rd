@@ -7,7 +7,7 @@ Read FASTA file
 Read and convert the fasta file to data frame
 }
 \usage{
-read.fasta(file = NULL, clean_name = TRUE)
+read.fasta(file = NULL, clean_name = FALSE)
 }
 
 \arguments{
