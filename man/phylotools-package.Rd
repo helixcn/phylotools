@@ -14,7 +14,7 @@ building PHYLIP supermatrix for RAxML etc.
 Package: \tab phylotools\cr
 Type: \tab Package\cr
 Version: \tab 0.2.0\cr
-Date: \tab 2015-05-26\cr
+Date: \tab 2015-06-10\cr
 License: \tab GLP-2\cr
 LazyLoad: \tab yes\cr
 }
