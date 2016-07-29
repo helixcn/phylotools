@@ -5,7 +5,7 @@
 #### date: 26 MAY 2015
 
 
-### split dat to fasta format
+### Create fasta files based on the groups specified
 split_dat <- function(dat, ref_table){
     colnames(ref_table) <- c("seq.name", "group")
     dat.merged <- merge(dat, ref_table, by = "seq.name", all.x = TRUE)

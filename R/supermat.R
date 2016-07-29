@@ -3,7 +3,7 @@
 #### package: phylotools
 #### URL： http://github.com/helixcn/phylotools
 #### date: 26 MAY 2015
-
+#### revised on: 29 July 2016
 
 supermat <- function(infiles, 
              outfile = "supermat.out.phy", 
@@ -46,7 +46,7 @@ supermat <- function(infiles,
     
     for(i in 2:ncol(supermat.dat)){  
         tem.sequences      <- as.character(supermat.dat[,i])  
-        nsites[i]          <- max(nchar(tem.sequences))      
+        nsites[i]          <- max(na.omit(nchar(tem.sequences)))      
         ### if the sequence is NA, it will be replaced by the repeated "-". 
         ### times of repeat was determined by the the length of the longest squence of the same gene. 
         supermat.sequences <- paste(supermat.sequences,       
