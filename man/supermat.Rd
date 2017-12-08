@@ -7,13 +7,13 @@ Build PHYLIP supermatrix and RAxML partition file using aligned FASTA or PHYLIP 
 Build PHYLIP supermatrix and create RAxML partition file using aligned fasta or phylip files.
 }
 \usage{
-supermat(infiles, outfile = "supermat.out.phy", 
+supermat(infiles, outfile = "supermat.out.phy",
          partition.file = "gene_partition.txt")
 }
 
 \arguments{
   \item{infiles}{
-a character string vector for phylip or aligned fasta file. 
+a character string vector for phylip or aligned fasta file.
 }
   \item{outfile}{
 the name of the PHYLIP supermatrix
@@ -23,14 +23,14 @@ partition data summary describing the genes.
 }
 }
 \details{
-Supermatrix here means a phylip file with combined aligned sequences. The missing sequences should be replaced with either "?" or "-".  
+Supermatrix here means a phylip file with combined aligned sequences. The missing sequences should be replaced with either "?" or "-".
 }
 \value{
-A list containing: 
+A list containing:
 (1)supermat.dat:a list containing all the data frames read by read.phylip or read.fasta
 (2)res.super.dat: a data frame containing the sequences and the names
 (3)partition.dat: summary for all the fasta or phylip files
-(4)partition.dat.vector: character string vector for the partition file for RAxML 
+(4)partition.dat.vector: character string vector for the partition file for RAxML
 }
 \references{
 
@@ -54,16 +54,59 @@ Type of the sequence in the RAxML partition file should be changed manually acco
 }
 \examples{
 
-matK.phy     <- system.file("/extdata/matK.phy", package = "phylotools")
-rbcla.phy    <- system.file("/extdata/rbcla.phy", package = "phylotools")
-test.phy     <- system.file("/extdata/test.phy", package = "phylotools")
-trn1.phy     <- system.file("/extdata/trn1.phy", package = "phylotools")
-trn2.phy     <- system.file("/extdata/trn2.phy", package = "phylotools")
-trn3.phy     <- system.file("/extdata/trn3.phy", package = "phylotools")
-trn3.phy     <- system.file("/extdata/trn3.phy", package = "phylotools")
-trn4.phy     <- system.file("/extdata/trn4.phy", package = "phylotools")
-trnh4.fasta  <- system.file("/extdata/trnh4.fasta", package = "phylotools")
-supermat(infiles = c(matK.phy, rbcla.phy, test.phy,trn1.phy,trn2.phy,trn3.phy,trn4.phy,trnh4.fasta))
+  cat("6 22",
+  "seq_1    --TTACAAATTGACTTATTATA",
+  "seq_2    GATTACAAATTGACTTATTATA",
+  "seq_3    GATTACAAATTGACTTATTATA",
+  "seq_5    GATTACAAATTGACTTATTATA",
+  "seq_8    GATTACAAATTGACTTATTATA",
+  "seq_10   ---TACAAATTGAATTATTATA",
+  file = "matk.phy", sep = "\n")
+
+  cat("5 15",
+  "seq_1     GATTACAAATTGACT",
+  "seq_3     GATTACAAATTGACT",
+  "seq_4     GATTACAAATTGACT",
+  "seq_5     GATTACAAATTGACT",
+  "seq_8     GATTACAAATTGACT",
+  file = "rbcla.phy", sep = "\n")
+
+  cat("5 50",
+  "seq_2          GTCTTATAAGAAAGAATAAGAAAG--AAATACAAA-------AAAAAAGA",
+  "seq_3          GTCTTATAAGAAAGAAATAGAAAAGTAAAAAAAAA-------AAAAAAAG",
+  "seq_5          GACATAAGACATAAAATAGAATACTCAATCAGAAACCAACCCATAAAAAC",
+  "seq_8          ATTCCAAAATAAAATACAAAAAGAAAAAACTAGAAAGTTTTTTTTCTTTG",
+  "seq_9          ATTCTTTGTTCTTTTTTTTCTTTAATCTTTAAATAAACCTTTTTTTTTTA",
+  file = "trn1.phy", sep = "\n")
+
+supermat(infiles = c("matK.phy", "rbcla.phy", "trn1.phy"))
+
+cat(
+  ">seq_1",  "--TTACAAATTGACTTATTATA",
+  ">seq_2",  "GATTACAAATTGACTTATTATA",
+  ">seq_3",  "GATTACAAATTGACTTATTATA",
+  ">seq_5",  "GATTACAAATTGACTTATTATA",
+  ">seq_8",  "GATTACAAATTGACTTATTATA",
+  ">seq_10", "---TACAAATTGAATTATTATA",
+  file = "matk.fasta", sep = "\n")
+
+cat(
+  ">seq_1", "GATTACAAATTGACT",
+  ">seq_3", "GATTACAAATTGACT",
+  ">seq_4", "GATTACAAATTGACT",
+  ">seq_5", "GATTACAAATTGACT",
+  ">seq_8", "GATTACAAATTGACT",
+  file = "rbcla.fasta", sep = "\n")
+
+cat(
+  ">seq_2", "GTCTTATAAGAAAGAATAAGAAAG--AAATACAAA-------AAAAAAGA",
+  ">seq_3", "GTCTTATAAGAAAGAAATAGAAAAGTAAAAAAAAA-------AAAAAAAG",
+  ">seq_5", "GACATAAGACATAAAATAGAATACTCAATCAGAAACCAACCCATAAAAAC",
+  ">seq_8", "ATTCCAAAATAAAATACAAAAAGAAAAAACTAGAAAGTTTTTTTTCTTTG",
+  ">seq_9", "ATTCTTTGTTCTTTTTTTTCTTTAATCTTTAAATAAACCTTTTTTTTTTA",
+  file = "trn1.fasta", sep = "\n")
+
+supermat(infiles = c("matK.fasta", "rbcla.fasta", "trn1.fasta"))
 
 }
 

@@ -14,11 +14,11 @@ get.fasta.name(infile, clean_name = FALSE)
 
 \arguments{
 
-  \item{infile}{ 
+  \item{infile}{
 character string representing the name of the fasta file.
 }
   \item{clean_name}{
-logical, representing cleaning of the names will be performed. 
+logical, representing cleaning of the names will be performed.
 }
 
 }
@@ -42,10 +42,15 @@ Punctuation characters and white space be replaced by "_".  Definition of Punctu
 }
 \examples{
 
-fasta.file <- system.file("/extdata/aligned.fasta", package = "phylotools")
-get.fasta.name(fasta.file)
+  cat(
+  ">seq_2", "GTCTTATAAGAAAGAATAAGAAAG--AAATACAAA-------AAAAAAGA",
+  ">seq_3", "GTCTTATAAGAAAGAAATAGAAAAGTAAAAAAAAA-------AAAAAAAG",
+  ">seq_5", "GACATAAGACATAAAATAGAATACTCAATCAGAAACCAACCCATAAAAAC",
+  ">seq_8", "ATTCCAAAATAAAATACAAAAAGAAAAAACTAGAAAGTTTTTTTTCTTTG",
+  ">seq_9", "ATTCTTTGTTCTTTTTTTTCTTTAATCTTTAAATAAACCTTTTTTTTTTA",
+  file = "trn1.fasta", sep = "\n")
+get.fasta.name("trn1.fasta")
 
 }
 
 \keyword{ fasta }
-

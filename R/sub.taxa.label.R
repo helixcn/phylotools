@@ -1,7 +1,7 @@
 #### author: Jinlong Zhang <jinlongzhang01@gmail.com>
 #### institution: Kadoorie Farm and Botanic Garden, Hong Kong
 #### package: phylotools
-#### URL： http://github.com/helixcn/phylotools
+#### URL: http://github.com/helixcn/phylotools
 #### date: 26 MAY 2015
 
 #### Function sub.tip.label as part of R package phylotools
@@ -9,7 +9,7 @@
 #### Institute of Botany, the Chinese Academy of Sciences, Beijing ,China
 #### Nov- 01-2010
 
-sub.taxa.label <- 
+sub.taxa.label <-
 function(tree, dat){
     if(!inherits(tree,"phylo")){
        stop("the input tree in is not a \"phylo\" class object.")
@@ -30,13 +30,13 @@ function(tree, dat){
        cat(length(unsub.dat),"tip label(s)",unsub.dat, "can not\n
            be found in the reference table.\n")
     }
-    
+
     if(!all(nnn%in%xxx1)){
         unsub.tree <- nnn[nnn%in%xxx1]
        cat(length(unsub.tree),"Names",unsub.tree, "in reference table\n
             can not be found in the tree.\n")
     }
-    
+
     label <- c()
     for(i in 1:length(dat[,1])){
         for(j in 1:length(nnn)){

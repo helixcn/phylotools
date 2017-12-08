@@ -13,8 +13,8 @@ building PHYLIP supermatrix for RAxML etc.
 \tabular{ll}{
 Package: \tab phylotools\cr
 Type: \tab Package\cr
-Version: \tab 0.2.0\cr
-Date: \tab 2016-07-29\cr
+Version: \tab 0.2.1\cr
+Date: \tab 2017-12-08\cr
 License: \tab GLP-2\cr
 LazyLoad: \tab yes\cr
 }
@@ -29,4 +29,3 @@ Maintainer: Jinlong Zhang <jinlongzhang01@gmail.com>
 }
 
 \keyword{ package }
-

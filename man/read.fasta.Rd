@@ -20,13 +20,13 @@ logical, representing cleaning of the names will be performed. Punctuation chara
 }
 }
 \details{
-In this function, names of the sequences are identified by ">", and all the lines before next ">" will be concatenated. 
+In this function, names of the sequences are identified by ">", and all the lines before next ">" will be concatenated.
 
 }
 \value{
-a data frame with two columns: 
+a data frame with two columns:
 (1) seq.name, the names for all the sequences.
-(2) seq.text, the raw sequence data. 
+(2) seq.text, the raw sequence data.
 }
 \references{
 \url{http://www.genomatix.de/online_help/help/sequence_formats.html}
@@ -35,16 +35,23 @@ a data frame with two columns:
 Jinlong Zhang <jinlongzhang01@gmail.com>
 }
 \note{
-Punctuation characters and white space in the names of the sequences will be replaced by "_". 
+Punctuation characters and white space in the names of the sequences will be replaced by "_".
 }
 
 \seealso{
-\code{\link{read.phylip}},\code{\link{dat2fasta}},\code{\link{dat2phylip}},\code{\link{split_dat}} 
+\code{\link{read.phylip}},\code{\link{dat2fasta}},\code{\link{dat2phylip}},\code{\link{split_dat}}
 }
 \examples{
 
-fasta.file <- system.file("/extdata/aligned.fasta", package = "phylotools")
-res <- read.fasta(fasta.file)
+cat(
+">seq_2", "GTCTTATAAGAAAGAATAAGAAAG--AAATACAAA-------AAAAAAGA",
+">seq_3", "GTCTTATAAGAAAGAAATAGAAAAGTAAAAAAAAA-------AAAAAAAG",
+">seq_5", "GACATAAGACATAAAATAGAATACTCAATCAGAAACCAACCCATAAAAAC",
+">seq_8", "ATTCCAAAATAAAATACAAAAAGAAAAAACTAGAAAGTTTTTTTTCTTTG",
+">seq_9", "ATTCTTTGTTCTTTTTTTTCTTTAATCTTTAAATAAACCTTTTTTTTTTA",
+file = "trn1.fasta", sep = "\n")
+
+res <- read.fasta("trn1.fasta")
 
 }
 \keyword{ fasta }

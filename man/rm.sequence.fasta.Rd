@@ -22,10 +22,10 @@ Vector of character string containing the names of sequences to be deleted.
 }
 }
 \details{
-Delete sequences from a fasta file. 
+Delete sequences from a fasta file.
 }
 \value{
-This is a subroutine without return value. 
+This is a subroutine without return value.
 }
 \references{
 \url{http://www.genomatix.de/online_help/help/sequence_formats.html}
@@ -40,16 +40,17 @@ Jinlong Zhang <jinlongzhang01@gmail.com>
 }
 \examples{
 
-fasta.file <- system.file("/extdata/aligned.fasta", package = "phylotools")
-sequence.names <- c("Mortierella elongata(n21_10)]",
-    "Other fungsu(N8_7)]",
-    "uncultured fungus,or olpidium brassicae(N11_7)]",
-    "B1_22]",
-    "Olpidium brassicae(B1_9)]",
-    "Ambispora gerdemannii(n8_9)]"
-)
-rm.sequence.fasta(infile = fasta.file, to.rm = sequence.names )
+cat(
+">seq_1",  "---TCCGCCCCCCTACTCTA",
+">seq_3",  "CTCTCCGCCCCTCTACTCTA",
+">seq_5",  "---TCCGCCC-TTTACTCTA",
+">seq_6",  "---TCCGCCCCTCTACTCTA",
+">seq_9",  "---TCCGCCC-TCTACTCTA",
+">seq_12", "CTCTCCGCCC-TCTACTCTA",
+file = "trn2.fasta", sep = "\n")
+
+rm.sequence.fasta(infile = "trn2.fasta", to.rm = c("seq_1","seq_12"))
+
 }
 
 \keyword{ fasta }
-

@@ -12,7 +12,7 @@ get.phylip.name(infile, clean_name = FALSE)
 
 \arguments{
   \item{infile}{
-      character representing the name or path of the phylip file. 
+      character representing the name or path of the phylip file.
   }
   \item{clean_name}{
      logical, representing cleaning of the names will be performed.  }
@@ -28,16 +28,9 @@ Punctuation characters and white space be replaced by "_". Definition of Punctua
 a character vector of the names of the sequences
 }
 
-\references{
-
-\url{http://bioperl.org/wiki/PHYLIP_multiple_alignment_format}
-
-}
-
 \author{
 Jinlong Zhang <jinlongzhang01@gmail.com>
 }
-
 
 \seealso{
 \code{\link{read.phylip}}, \code{\link{regex}}
@@ -45,10 +38,16 @@ Jinlong Zhang <jinlongzhang01@gmail.com>
 
 \examples{
 
-phylip.file <- system.file("/extdata/matK.phy", package = "phylotools")
-get.phylip.name(phylip.file)
+  cat("6 22",
+  "seq_1    --TTACAAATTGACTTATTATA",
+  "seq_2    GATTACAAATTGACTTATTATA",
+  "seq_3    GATTACAAATTGACTTATTATA",
+  "seq_5    GATTACAAATTGACTTATTATA",
+  "seq_8    GATTACAAATTGACTTATTATA",
+  "seq_10   ---TACAAATTGAATTATTATA",
+  file = "matk.phy", sep = "\n")
+get.phylip.name("matk.phy")
 
 }
 
 \keyword{ phylip }
-

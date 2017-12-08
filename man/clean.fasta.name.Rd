@@ -5,7 +5,7 @@ Clean the name of a fasta file
 }
 
 \description{
-Cleaning the sequences names of a fasta file. The punctuation characters and the white space will be replaced with "_".
+Cleaning the names of sequences for a fasta file. The punctuation characters and the white space will be replaced with "_".
 }
 
 \usage{
@@ -18,7 +18,7 @@ clean.fasta.name(infile = NULL, outfile = "name_cleaned.fasta")
    character string representing the name of the fasta file.
 }
 \item{outfile}{
-   Character string representing the file name to be generated. 
+   Character string representing the file name to be generated.
 }
 
 }
@@ -42,8 +42,20 @@ Jinlong Zhang <jinlongzhang01@gmail.com>
 
 \examples{
 
-fasta.file <- system.file("/extdata/aligned.fasta", package = "phylotools")
-clean.fasta.name(infile = fasta.file)
+  cat(
+    ">seq_1*66",  "--TTACAAATTGACTTATTATA",
+    ">seq_2()r",  "GATTACAAATTGACTTATTATA",
+    ">seq_3:test",  "GATTACAAATTGACTTATTATA",
+    ">seq_588",  "GATTACAAATTGACTTATTATA",
+    ">seq_8$$yu",  "GATTACAAATTGACTTATTATA",
+    ">seq_10", "---TACAAATTGAATTATTATA",
+    file = "matk.fasta", sep = "\n")
+    
+  clean.fasta.name(infile = "matk.fasta")
+  get.fasta.name("name_cleaned.fasta")
+
+  # Delete file
+  unlink("matk.fasta")
 
 }
 

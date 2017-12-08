@@ -5,7 +5,7 @@
 Conver the data frame to sequential PHYLIP format file
 }
 \description{
-Convert and save a data frame to sequential PHYLIP file. 
+Convert and save a data frame to sequential PHYLIP file.
 }
 \usage{
 dat2phylip(dat, outfile = "out.phy")
@@ -16,20 +16,18 @@ dat2phylip(dat, outfile = "out.phy")
 the data frame returned by  \code{\link{read.phylip}},  \code{\link{read.fasta}}.
 }
   \item{outfile}{
-character string represents the phylip file to be generated. 
+character string represents the phylip file to be generated.
 }
 }
 \details{
-The output will be in sequential PHYLIP format. 
+The output will be in sequential PHYLIP format.
 }
 \value{
-This is a subroutine, there is no return value. 
+This is a subroutine, there is no return value.
 }
 \references{
 
 \url{http://www.genomatix.de/online_help/help/sequence_formats.html}
-
-\url{http://bioperl.org/wiki/PHYLIP_multiple_alignment_format}
 
 }
 \author{
@@ -44,10 +42,16 @@ The names of the sequences should not contain white space or Punctuation charact
 }
 \examples{
 
-fasta.file <- system.file("/extdata/aligned.fasta", package = "phylotools")
-res <- read.fasta(fasta.file)
+  cat(
+  ">seq_2", "GTCTTATAAGAAAGAATAAGAAAG--AAATACAAA-------AAAAAAGA",
+  ">seq_3", "GTCTTATAAGAAAGAAATAGAAAAGTAAAAAAAAA-------AAAAAAAG",
+  ">seq_5", "GACATAAGACATAAAATAGAATACTCAATCAGAAACCAACCCATAAAAAC",
+  ">seq_8", "ATTCCAAAATAAAATACAAAAAGAAAAAACTAGAAAGTTTTTTTTCTTTG",
+  ">seq_9", "ATTCTTTGTTCTTTTTTTTCTTTAATCTTTAAATAAACCTTTTTTTTTTA",
+  file = "trn1.fasta", sep = "\n")
+
+res <- read.fasta("trn1.fasta")
 dat2phylip(res)
 
 }
 \keyword{ phylip }
-
