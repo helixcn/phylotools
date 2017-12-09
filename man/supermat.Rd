@@ -79,7 +79,9 @@ Type of the sequence in the RAxML partition file should be changed manually acco
   "seq_9          ATTCTTTGTTCTTTTTTTTCTTTAATCTTTAAATAAACCTTTTTTTTTTA",
   file = "trn1.phy", sep = "\n")
 
-supermat(infiles = c("matK.phy", "rbcla.phy", "trn1.phy"))
+supermat(infiles = c("matk.phy", "rbcla.phy", "trn1.phy"))
+unlink(c("matk.phy", "rbcla.phy", "trn1.phy"))
+unlink(c("supermat.out.phy","gene_partition.txt"))
 
 cat(
   ">seq_1",  "--TTACAAATTGACTTATTATA",
@@ -106,7 +108,10 @@ cat(
   ">seq_9", "ATTCTTTGTTCTTTTTTTTCTTTAATCTTTAAATAAACCTTTTTTTTTTA",
   file = "trn1.fasta", sep = "\n")
 
-supermat(infiles = c("matK.fasta", "rbcla.fasta", "trn1.fasta"))
+supermat(infiles = c("matk.fasta", "rbcla.fasta", "trn1.fasta"))
+unlink(c("matk.fasta", "rbcla.fasta", "trn1.fasta"))
+
+unlink(c("supermat.out.phy","gene_partition.txt"))
 
 }
 

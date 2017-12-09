@@ -47,7 +47,7 @@ Jinlong Zhang <jinlongzhang01@gmail.com>
   "seq_10   ---TACAAATTGAATTATTATA",
   file = "matk.phy", sep = "\n")
 get.phylip.name("matk.phy")
-
+unlink("matk.phy")
 }
 
 \keyword{ phylip }

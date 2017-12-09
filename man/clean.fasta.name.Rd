@@ -50,13 +50,13 @@ Jinlong Zhang <jinlongzhang01@gmail.com>
     ">seq_8$$yu",  "GATTACAAATTGACTTATTATA",
     ">seq_10", "---TACAAATTGAATTATTATA",
     file = "matk.fasta", sep = "\n")
-    
+
   clean.fasta.name(infile = "matk.fasta")
   get.fasta.name("name_cleaned.fasta")
 
   # Delete file
   unlink("matk.fasta")
-
+  unlink("name_cleaned.fasta")
 }
 
 \keyword{ fasta }

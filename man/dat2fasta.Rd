@@ -48,7 +48,8 @@ file = "trn1.fasta", sep = "\n")
 
 res <- read.fasta("trn1.fasta")
 dat2fasta(res)
-
+unlink("trn1.fasta")
+unlink("out.fasta")
 }
 
 \keyword{ fasta }

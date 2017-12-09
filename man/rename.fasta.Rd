@@ -55,6 +55,8 @@ old_name <- get.fasta.name("matk.fasta")
 new_name <- c("Magnolia", "Ranunculus", "Carex", "Morus", "Ulmus", "Salix")
 ref2 <- data.frame(old_name, new_name)
 rename.fasta(infile = "matk.fasta", ref_table = ref2, outfile = "renamed.fasta")
+unlink("matk.fasta")
+unlink("renamed.fasta")
 }
 
 \keyword{ fasta }

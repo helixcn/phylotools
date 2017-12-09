@@ -51,6 +51,8 @@ file = "trn2.fasta", sep = "\n")
 
 rm.sequence.fasta(infile = "trn2.fasta", to.rm = c("seq_1","seq_12"))
 
+unlink("trn2.fasta")
+unlink("sequence.removed.fasta")
 }
 
 \keyword{ fasta }

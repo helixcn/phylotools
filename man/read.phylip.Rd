@@ -20,7 +20,7 @@ logical, representing cleaning of the names will be performed. }
 \details{
 read.phylip accepts both interleaved and sequential phylip, the number of sequences is identified by parsing the first line of the file. Sequences and their names will be stored in a data frame.
 
-If clean_name is true, punctuation characters and white space be replaced by "_". Definition of punctuation characters can be found at \code{\link{regex}}.
+If clean_name is TRUE, punctuation characters and white space be replaced by "_". Definition of punctuation characters can be found at \code{\link{regex}}.
 
 }
 \value{
@@ -51,7 +51,7 @@ the Punctuation characters and white space in the names of the sequences will be
   file = "matk.phy", sep = "\n")
 
 res <- read.phylip(infile = "matk.phy")
-
+unlink("matk.phy")
 }
 
 \keyword{ phylip }

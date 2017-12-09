@@ -50,7 +50,7 @@ Punctuation characters and white space be replaced by "_".  Definition of Punctu
   ">seq_9", "ATTCTTTGTTCTTTTTTTTCTTTAATCTTTAAATAAACCTTTTTTTTTTA",
   file = "trn1.fasta", sep = "\n")
 get.fasta.name("trn1.fasta")
-
+unlink("trn1.fasta")
 }
 
 \keyword{ fasta }

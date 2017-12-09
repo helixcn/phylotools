@@ -50,15 +50,21 @@ Jinlong Zhang <jinlongzhang01@gmail.com>
   ">seq_15",  "GATTACAAATTGACTTATTATA",
   ">seq_16",  "GATTACAAATTGACTTATTATA",
   ">seq_17",  "---TACAAATTGAATTATTATA",
-  file = "trnH.fasta", sep = "\n")
+  file = "trnh.fasta", sep = "\n")
 
-sequence_name <- get.fasta.name("trnH.fasta")
+sequence_name <- get.fasta.name("trnh.fasta")
 sequence_group <- c("group1","group1","group1","group1","group1",
 "group2","group2","group2","group3","group3","group3","group3")
 group <- data.frame(sequence_name, sequence_group)
 
-fasta <- read.fasta("trnH.fasta")
+fasta <- read.fasta("trnh.fasta")
 split_dat(fasta, group)
+
+unlink("trnh.fasta")
+unlink("ungrouped.fasta")
+unlink("group1.fasta")
+unlink("group2.fasta")
+unlink("group3.fasta")
 
 }
 

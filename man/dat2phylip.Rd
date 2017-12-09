@@ -52,6 +52,7 @@ The names of the sequences should not contain white space or Punctuation charact
 
 res <- read.fasta("trn1.fasta")
 dat2phylip(res)
-
+unlink("trn1.fasta")
+unlink("out.phy")
 }
 \keyword{ phylip }

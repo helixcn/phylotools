@@ -52,6 +52,6 @@ cat(
 file = "trn1.fasta", sep = "\n")
 
 res <- read.fasta("trn1.fasta")
-
+unlink("trn1.fasta")
 }
 \keyword{ fasta }

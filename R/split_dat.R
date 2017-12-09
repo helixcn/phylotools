@@ -3,7 +3,7 @@
 #### package: phylotools
 #### URL: http://github.com/helixcn/phylotools
 #### date: 26 MAY 2015
-
+#### modified: 8 DEC 2017
 
 ### Create fasta files based on the groups specified
 split_dat <- function(dat, ref_table){
@@ -12,7 +12,7 @@ split_dat <- function(dat, ref_table){
 
     ### save the ungrouped sequences first
     group.dat_i  <- dat.merged[is.na(dat.merged$group), ][, -3]
-    dat2fasta(group.dat_i, outfile = paste("Ungrouped", ".fasta", sep = ""))
+    dat2fasta(group.dat_i, outfile = "ungrouped.fasta")
 
     ### deleted ungrouped sequences from the merged
     dat.merged <- na.omit(dat.merged)
