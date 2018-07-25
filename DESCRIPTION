@@ -1,8 +1,8 @@
 Package: phylotools
 Type: Package
 Title: Phylogenetic Tools for Eco-Phylogenetics
-Version: 0.2.2
-Date: 2017-12-08
+Version: 0.2.3
+Date: 2018-7-26
 Authors@R: c(person("Jinlong", "Zhang", role = c("aut", "cre"), email = "jinlongzhang01@gmail.com"),
            person("Nancai", "Pei", role = c("ctb")),
            person("Xiangcheng", "Mi", role = c("ctb")))

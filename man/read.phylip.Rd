@@ -4,10 +4,10 @@
 read phylip file
 }
 \description{
-read the phylip file, and store the sequences and their names in data frame.
+read the phylip file, and store the sequences and their names in a dataframe.
 }
 \usage{
-read.phylip(infile, clean_name = TRUE)
+read.phylip(infile, clean_name = TRUE, seq.name.length = NA)
 }
 
 \arguments{
@@ -15,7 +15,11 @@ read.phylip(infile, clean_name = TRUE)
 character string for the name of the phylip file.
 }
   \item{clean_name}{
-logical, representing cleaning of the names will be performed. }
+logical, representing cleaning of the names will be performed.
+}
+  \item{seq.name.length}{
+Number of characters for the sequence names, if not specified, the function will use the first white space as the identifier. All the character before the first white space will be treated as sequence names, and the rest will be treated as sequences.
+}
 }
 \details{
 read.phylip accepts both interleaved and sequential phylip, the number of sequences is identified by parsing the first line of the file. Sequences and their names will be stored in a data frame.
