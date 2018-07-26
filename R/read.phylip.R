@@ -3,7 +3,7 @@
 #### package: phylotools
 #### URL: http://github.com/helixcn/phylotools
 #### date: 26 MAY 2015
-#### data: 2018-7-26
+#### date: 2018-7-26
 #### Acknowledgements: I would like to thank Zhang Jia for pointing out an important bug of this function.
 
 read.phylip <- function(infile, clean_name = TRUE, seq.name.length = NA){
