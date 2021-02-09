@@ -4,7 +4,7 @@ phylotools is an R package, to install it, please use the following command in R
 
 `library(devtools)`
 
-`install_github("helixcn/phylotools")`
+`install_github("helixcn/phylotools", build_vignettes = TRUE)`
 
 If you haven't had devtools installed, please install it by typing `"install.packages("devtools")"` in R console.
 
