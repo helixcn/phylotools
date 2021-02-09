@@ -1,0 +1,178 @@
+---
+title: "Building supermatrix matrices using the phylotools package"
+author: "Jinlong Zhang"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Building DNA supermatrix matrices using the phylotools R package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+Building phylogenetic trees usually require multiple genes and the supermatrix approach is one of the popular ways to incorporate the information. However, the preparation of supermatrix is not straightforward and error-prone. The phylotools package aims to simplify the preparation of supermatrix. It automatically concatenated different gene markers by their names, i.e., building  supermatrices based on the aligned Fasta or Phylip files.
+
+## The Relaxed Phylip Format
+
+The resulted supermatrices files are in the Relaxed Phylip format, a format that could be used in RAxML and IQ-Tree. The Relaxed Phylip format is an extension of the strict Phylip format, i.e., the two numbers in the first line show the number of sequences and the number of base pairs (bp), respectively, with a white-space in between. The second line starts with the sequence name, and between the sequence name and the nucleotide sequences, there is a white-space. In the strict Phylip format, each sequence name only allows 10 characters, software such as Phylip (https://evolution.genetics.washington.edu/phylip.html) will truncate the name and only take the first 10 characters if there are more than 10. The Relaxed Phylip format does not have this limitation and the names can contain as long as 128 characters.
+
+## Why building supermatrix?
+
+Why is it necessary to use multiple gene markers to build an evolutionary tree? This is mainly because the individual genes markers are generally too short to fully reflect the relationships of the species, and building more accurate evolutionary trees generally requires longer sequences. Obtaining DNA barcoding markers became relatively easy from the year 2005 on wards, and these markers are suitable for building large phylogenies.
+
+## Commonly used DNA barcoding markers
+
+DNA barcoding sequences are generally obtained by the traditional Sanger sequencing method based on PCR products. rbcLa (Ribulose bisphosphate carboxylase large chain), matK (Megakaryocyte-Associated Tyrosine Kinase) and trnH-psbA (intergenic spacer region) are among the most commonly used DNA barcoding markers, and they all derived from the chloroplast genome. Other markers, such as ITS (Internal transcribed spacer), are also commonly used.
+
+## The gene marker's mutation rate
+
+The mutation rates could vary greatly among different genes. Some genes are more stable and the differences between families and genera could be very minor, while others mutate rapidly and could be very different even among populations/individuals of the same species. For example,  **rbcLa** is commonly used to locate the family a taxon belongs to, while **matK** could locate the genus or even species. Non-coding genes with very fast mutation rates, such as the **trnH-psbA**, are often used to determine species or subspecies. Using partitioned model during phylogenetic inferences is recommended.
+
+## Missing Data
+
+Ideally, all the markers of a species should be obtained. However, some sequences of some species may not always be amplified or sequenced successfully, resulting in missing data. These missing loci will be denoted as `?` in the supermatrix.
+
+
+## Similar software
+
+In addition to phylotools, the following software can also be used to build supermatrix.
+
+1. *Biopython* (https://biopython.org/wiki/Concatenate_nexus)
+2. *Utensils* (https://github.com/ballesterus/Utensils)
+3. *Geneious* (https://assets.geneious.com/manual/11.1/GeneiousManualsu53.html)
+4. *catfasta2phyml* (https://github.com/nylander/catfasta2phyml)
+5. *SEDA* (http://www.sing-group.org/seda/ , https://www.biostars.org/p/332853/)
+6. *SuperMatrix*: (http://coleoguy.blogspot.com/2015/04/r-concatenate-alignments-into.html)
+7. *concat* (https://figshare.com/articles/concatenation_R/3839538)
+8. *AMAS* (https://www.ncbi.nlm.nih.gov/pmc/articl::es/PMC4734057/)
+
+In which Genious has a graphical interface.
+
+## Features of Phylotools
+
+- `phylotools` is written entirely in R and is easy to use.
+- `phylotools` assumes that the same species has the same name in different fasta or phylip files.
+- `phylotools` can recognize the aligned fasta or phylip files, and the generated supermatrix is saved in the Relaxed Phylip format.
+
+## The Installation
+
+The latest version of `phylotools` is stored on github and has not been uploaded to CRAN. Use the following command to install.
+
+```R
+devtools::install_github("helixcn/phylotools")
+```
+
+If `devtools` has not been installed, you can use `install.packages("devtools")` to install.
+
+## Functions in phylotools
+
+- `clean.fasta.name` removes special characters from fasta sequence names so that they can be entered and displayed properly when building trees
+- `dat2fasta` converts DNA sequences data.frame to fasta files
+- `dat2phylip` converts DNA sequences data.frame to phylip files
+- `get.fasta.name` obtains the names of all sequences in the fasta file
+- `get.phylip.name` obtains the names of all sequences in the phylip file
+- `read.fasta` reads the fasta file
+- `read.phylip` reads the phylip file
+- `rename.fasta` renames the sequences within a fasta file according to a data frame supplied. 
+- `rm.sequence.fasta` removes a specific sequence from a fasta file
+- `split_dat` splits the data into separate fasta files based on the grouping of the sequence, e.g., for trnH-psbA sequences grouped by Orders (a taxonomic rank).
+- `sub.taxa.label` substitutes the taxa name in the phylogenetic tree (a `phylo` object of `ape`)
+- `supermat` creates supermatrix and RAxML partition files from aligned fasta or phylip files.
+
+## Creating supermatrix with phylip files
+
+Suppose there are three Phylip files encoding different genes, create the supermatrix of the three genes and save them in Relaxed Phylip format, and generate RAxML Partition File to record the start and end loci of each gene.
+
+The corresponding codes are as follows.
+
+```{R}
+library(phylotools) 
+cat("6 22",
+  "seq_1    --TTACAAATTGACTTATTATA",
+  "seq_2    GATTACAAATTGACTTATTATA",
+  "seq_3    GATTACAAATTGACTTATTATA",
+  "seq_5    GATTACAAATTGACTTATTATA",
+  "seq_8    GATTACAAATTGACTTATTATA",
+  "seq_10   ---TACAAATTGAATTATTATA",
+  file = "matk.phy", sep = "\n")
+
+  cat("5 15",
+  "seq_1     GATTACAAATTGACT",
+  "seq_3     GATTACAAATTGACT",
+  "seq_4     GATTACAAATTGACT",
+  "seq_5     GATTACAAATTGACT",
+  "seq_8     GATTACAAATTGACT",
+  file = "rbcla.phy", sep = "\n")
+
+  cat("5 50",
+  "seq_2          GTCTTATAAGAAAGAATAAGAAAG--AAATACAAA-------AAAAAAGA",
+  "seq_3          GTCTTATAAGAAAGAAATAGAAAAGTAAAAAAAAA-------AAAAAAAG",
+  "seq_5          GACATAAGACATAAAATAGAATACTCAATCAGAAACCAACCCATAAAAAC",
+  "seq_8          ATTCCAAAATAAAATACAAAAAGAAAAAACTAGAAAGTTTTTTTTCTTTG",
+  "seq_9          ATTCTTTGTTCTTTTTTTTCTTTAATCTTTAAATAAACCTTTTTTTTTTA",
+  file = "trn1.phy", sep = "\n")
+
+supermat(infiles = c("matk.phy", "rbcla.phy", "trn1.phy"))
+```
+
+## Generate supermatrix with fasta files
+
+To generate a supermatrix using a matched fasta file, the command is changed to the corresponding fasta file name.
+
+```{R}
+
+library(phylotools)
+
+cat(
+  ">seq_1",  "--TTACAAATTGACTTATTATA",
+  ">seq_2",  "GATTACAAATTGACTTATTATA",
+  ">seq_3",  "GATTACAAATTGACTTATTATA",
+  ">seq_5",  "GATTACAAATTGACTTATTATA",
+  ">seq_8",  "GATTACAAATTGACTTATTATA",
+  ">seq_10", "---TACAAATTGAATTATTATA",
+  file = "matk.fasta", sep = "\n")
+
+cat(
+  ">seq_1", "GATTACAAATTGACT",
+  ">seq_3", "GATTACAAATTGACT",
+  ">seq_4", "GATTACAAATTGACT",
+  ">seq_5", "GATTACAAATTGACT",
+  ">seq_8", "GATTACAAATTGACT",
+  file = "rbcla.fasta", sep = "\n")
+
+cat(
+  ">seq_2", "GTCTTATAAGAAAGAATAAGAAAG--AAATACAAA-------AAAAAAGA",
+  ">seq_3", "GTCTTATAAGAAAGAAATAGAAAAGTAAAAAAAAA-------AAAAAAAG",
+  ">seq_5", "GACATAAGACATAAAATAGAATACTCAATCAGAAACCAACCCATAAAAAC",
+  ">seq_8", "ATTCCAAAATAAAATACAAAAAGAAAAAACTAGAAAGTTTTTTTTCTTTG",
+  ">seq_9", "ATTCTTTGTTCTTTTTTTTCTTTAATCTTTAAATAAACCTTTTTTTTTTA",
+  file = "trn1.fasta", sep = "\n")
+
+supermat(infiles = c("matk.fasta", "rbcla.fasta", "trn1.fasta"))
+```
+
+## Citation
+
+```{R}
+
+citation("phylotools")
+
+```
+
+## Further reading
+
+- Kress, W. J., Erickson, D. L., Jones, F. A., Swenson, N. G., Perez, R., Sanjur, O., & Bermingham, E. (2009). Plant DNA barcodes and a community phylogeny of a tropical forest dynamics plot in Panama. Proceedings of the National Academy of Sciences, 106(44), 18621-18626.
+- Pei, N., Zhang, J., Mi, X., & Ge, X. (2011). Plant DNA barcodes promote the development of phylogenetic community ecology. Biodiversity Science, 19(3), 284-294.
+- Roquet, C., Thuiller, W., & Lavergne, S. (2013). Building megaphylogenies for macroecology: taking up the challenge. Ecography, 36(1), 13-26.
+- https://cme.h-its.org/exelixis/web/software/raxml/index.html
+
+
+
+
+

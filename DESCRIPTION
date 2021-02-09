@@ -1,22 +1,22 @@
 Package: phylotools
 Type: Package
 Title: Phylogenetic Tools for Eco-Phylogenetics
-Version: 0.2.3
-Date: 2018-7-26
+Version: 0.2.4
+Date: 2021-02-09
 Authors@R: c(person("Jinlong", "Zhang", role = c("aut", "cre"), email = "jinlongzhang01@gmail.com"),
-           person("Nancai", "Pei", role = c("ctb")),
-           person("Xiangcheng", "Mi", role = c("ctb")))
+            person("Nancai", "Pei", role = c("ctb")),
+            person("Xiangcheng", "Mi", role = c("ctb")))
 Author: Jinlong Zhang [aut, cre],
   Nancai Pei [ctb],
   Xiangcheng Mi [ctb]
 Maintainer: Jinlong Zhang <jinlongzhang01@gmail.com>
 Description: A collection of tools for building RAxML supermatrix using
-             PHYLIP or aligned FASTA files. These functions will be
-             useful for building large phylogenies using multiple markers.
+              PHYLIP or aligned FASTA files. These functions will be
+              useful for building large phylogenies using multiple markers.
 Depends: ape
-Suggests: vegan
+Suggests: vegan, knitr, rmarkdown
+VignetteBuilder: knitr
 License: GPL-2
 LazyLoad: yes
 URL: https://github.com/helixcn/phylotools
 NeedsCompilation: no
-Packaged: 2017-12-08 16:52:47 UTC; jinlong
