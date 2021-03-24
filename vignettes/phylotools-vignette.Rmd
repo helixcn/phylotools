@@ -4,7 +4,7 @@ author: "Jinlong Zhang"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Building DNA supermatrix matrices using the phylotools R package}
+  %\VignetteIndexEntry{Building supermatrix matrices using the phylotools package}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

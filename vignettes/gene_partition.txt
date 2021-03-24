@@ -1,0 +1,3 @@
+DNA, matk = 1 - 22
+DNA, rbcla = 23 - 37
+DNA, trn1 = 38 - 87
