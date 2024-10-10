@@ -5,7 +5,7 @@
 #### date: 26 MAY 2015
 
 
-get.phylip.name <- function(infile, clean_name = FALSE){
-    dat <- read.phylip(infile, clean_name = clean_name)
-    return(dat[,1])
+get.phylip.name <- function(infile, clean_name = FALSE) {
+  dat <- read.phylip(infile, clean_name = clean_name)
+  return(dat[, 1])
 }

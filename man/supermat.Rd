@@ -7,7 +7,7 @@ Build PHYLIP supermatrix and RAxML partition file using aligned FASTA or PHYLIP 
 Build PHYLIP supermatrix and create RAxML partition file using aligned fasta or phylip files.
 }
 \usage{
-supermat(infiles, outfile = "supermat.out.phy",
+supermat(infiles, outfile = "supermat.out.fas",
          partition.file = "gene_partition.txt")
 }
 

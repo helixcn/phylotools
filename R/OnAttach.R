@@ -1,3 +1,3 @@
-.onAttach <- function(libname, pkgname)  {
-    options(stringsAsFactors = FALSE)
+.onAttach <- function(libname, pkgname) {
+  options(stringsAsFactors = FALSE)
 }

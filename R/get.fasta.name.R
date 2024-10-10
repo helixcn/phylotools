@@ -4,7 +4,7 @@
 #### URL: http://github.com/helixcn/phylotools
 #### date: 26 MAY 2015
 
-get.fasta.name <- function(infile, clean_name = FALSE){
-    dat <- read.fasta(infile, clean_name = FALSE)
-    return(dat[,1])
+get.fasta.name <- function(infile, clean_name = FALSE) {
+  dat <- read.fasta(infile, clean_name = FALSE)
+  return(dat[, 1])
 }
